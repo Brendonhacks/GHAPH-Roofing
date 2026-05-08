@@ -130,22 +130,27 @@
     .masonry-tall { grid-row: span 2; }
     .masonry-wide { grid-column: span 2; }
 
-    /* NAVBAR STYLES - Fixed for visibility */
+    @media (max-width: 768px) {
+      .masonry-wide { grid-column: span 1; }
+    }
+
+    /* NAVBAR STYLES - Blue text throughout */
     .main-navbar {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 1050;
-      background-color: #ffffff !important;
-      border-bottom: 2px solid #1d4ed8;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-      padding-top: 0.75rem;
-      padding-bottom: 0.75rem;
+        position: fixed !important;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        z-index: 99999 !important;
+        background-color: #ffffff !important;
+        border-bottom: 2px solid #1d4ed8;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        padding-top: 0.75rem;
+        padding-bottom: 0.75rem;
     }
 
     .main-navbar .navbar-brand {
-      color: #101519 !important;
+      color: #1d4ed8 !important;
       font-family: 'Montserrat', sans-serif;
       font-weight: 700;
       font-size: 1.5rem;
@@ -164,7 +169,7 @@
     }
 
     .main-navbar .nav-link {
-      color: #101519 !important;
+      color: #1d4ed8 !important;
       font-weight: 600;
       font-size: 0.95rem;
       padding: 0.5rem 1rem !important;
@@ -174,14 +179,16 @@
     }
 
     .main-navbar .nav-link:hover {
-      color: #1d4ed8 !important;
+      color: #0039b5 !important;
       background-color: rgba(29, 78, 216, 0.05);
+      border-bottom-color: rgba(29, 78, 216, 0.3);
     }
 
     .main-navbar .nav-link.active {
-      color: #1d4ed8 !important;
+      color: #0039b5 !important;
       border-bottom-color: #1d4ed8;
       background-color: rgba(29, 78, 216, 0.08);
+      font-weight: 700;
     }
 
     .navbar-toggler-custom {
@@ -323,15 +330,24 @@
       padding-top: 76px;
     }
 
-    /* Smooth scroll */
     html {
       scroll-behavior: smooth;
+    }
+
+    header{
+    position: relative;
+    z-index: 1;
+    }
+
+    .main-navbar *{
+    visibility: visible !important;
+    opacity: 1 !important;
     }
   </style>
 </head>
 <body class="bg-background text-on-surface font-body-md">
 
-<!-- NAVIGATION - Fixed and fully visible on all screens -->
+<!-- NAVIGATION - Blue text throughout -->
 <nav class="navbar navbar-expand-lg main-navbar">
   <div class="container" style="max-width: 1280px;">
     <a class="navbar-brand" href="#">
@@ -372,11 +388,11 @@
   </div>
 </nav>
 
-<!-- HERO SECTION -->
-<header class="position-relative d-flex align-items-center bg-primary overflow-hidden" style="min-height: calc(100vh - 76px); margin-top: -76px; padding-top: 76px;">
-  <div class="position-absolute top-0 start-0 w-100 h-100" style="opacity: 0.45;">
-    <img class="w-100 h-100" style="object-fit: cover;" alt="Professional roof installation in Lagos" 
-         src="https://images.unsplash.com/photo-1632778149955-e80f8ceca2e8?w=1920&q=80" />
+<!-- HERO SECTION with roofing image -->
+<header class="position-relative d-flex align-items-center bg-primary overflow-hidden" style="min-height: 100vh; padding-top: 76px;">
+  <div class="position-absolute top-0 start-0 w-100 h-100" style="opacity: 0.5;">
+    <img class="w-100 h-100" style="object-fit: cover;" alt="Professional roof installation in Lagos Nigeria with workers installing stone-coated roofing tiles" 
+         src="hero_image.png" />
   </div>
   <div class="position-absolute top-0 start-0 w-100 h-100" style="background: linear-gradient(135deg, rgba(16, 21, 25, 0.92) 0%, rgba(16, 21, 25, 0.75) 100%);"></div>
   <div class="container position-relative" style="z-index: 10; max-width: 1280px;">
@@ -420,15 +436,15 @@
   </div>
 </header>
 
-<!-- ABOUT SECTION -->
+<!-- ABOUT SECTION with roofing work image -->
 <section id="about" class="py-5 py-md-7" style="background-color: #f8f9ff;">
   <div class="container" style="max-width: 1280px;">
     <div class="row align-items-center g-5">
       <div class="col-lg-6">
         <div class="position-relative">
           <div class="border border-3 p-2 h-100 rounded" style="border-color: #1d4ed8 !important; min-height: 380px;">
-            <img class="w-100 h-100 rounded" style="object-fit: cover;" alt="Luxury Lagos residence roofing"
-                 src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80" />
+            <img class="w-100 h-100 rounded" style="object-fit: cover;" alt="Professional roofer installing stone-coated roofing tiles on a residential building in Lagos" 
+                 src="img1.png" />
           </div>
           <div class="position-absolute bottom-4 end-4 p-3 rounded shadow-lg" style="background: white;">
             <div class="text-center">
@@ -497,7 +513,7 @@
         WHAT WE OFFER
       </span>
       <h2 class="mb-3" style="font-family: 'Montserrat', sans-serif; font-size: clamp(1.75rem, 4vw, 2.5rem); font-weight: 700; color: #0b1c30;">
-        Professional Services
+        Professional Roofing Services
       </h2>
       <p class="mx-auto" style="color: #44474a; max-width: 550px; font-size: 1.1rem;">
         Structured solutions for long-lasting protection of your most valuable asset.
@@ -517,7 +533,7 @@
             Roof Installation
           </h3>
           <p class="text-center mb-4" style="color: #44474a; flex-grow: 1;">
-            Full installation using premium stone-coated or aluminum materials tailored for the Lagos climate.
+            Full installation using premium stone-coated or aluminum roofing materials tailored for the Lagos climate.
           </p>
           <div class="text-center">
             <span class="badge px-3 py-2 rounded-pill" style="background: #e5eeff; color: #1d4ed8; font-weight: 600; font-size: 0.8rem;">
@@ -539,7 +555,7 @@
             Gutter Repairs
           </h3>
           <p class="text-center mb-4" style="color: #44474a; flex-grow: 1;">
-            Expert diagnostic and repair services for leaking or sagging gutter systems.
+            Expert diagnostic and repair services for leaking or sagging gutter systems to prevent water damage.
           </p>
           <div class="text-center">
             <span class="badge px-3 py-2 rounded-pill" style="background: #fef3c7; color: #92400e; font-weight: 600; font-size: 0.8rem;">
@@ -561,7 +577,7 @@
             Roof Damage Repair
           </h3>
           <p class="text-center mb-4" style="color: #44474a; flex-grow: 1;">
-            Rapid response to leaks, missing tiles, and structural wear from weather damage.
+            Rapid response to leaks, missing tiles, and structural wear to maintain the integrity of your property.
           </p>
           <div class="text-center">
             <span class="badge px-3 py-2 rounded-pill" style="background: #dbeafe; color: #1e40af; font-weight: 600; font-size: 0.8rem;">
@@ -583,7 +599,7 @@
             Gutter Installation
           </h3>
           <p class="text-center mb-4" style="color: #44474a; flex-grow: 1;">
-            Customized drainage solutions engineered for heavy tropical rainfall patterns.
+            Customized drainage solutions designed to handle heavy tropical rainfall effectively and safely.
           </p>
           <div class="text-center">
             <span class="badge px-3 py-2 rounded-pill" style="background: #e5eeff; color: #1d4ed8; font-weight: 600; font-size: 0.8rem;">
@@ -605,7 +621,7 @@
             Roof Inspection
           </h3>
           <p class="text-center mb-4" style="color: #44474a; flex-grow: 1;">
-            Comprehensive 21-point inspection reports for property buyers and owners.
+            Comprehensive 21-point inspection reports for property buyers and safety-conscious homeowners.
           </p>
           <div class="text-center">
             <span class="badge px-3 py-2 rounded-pill" style="background: #fce7f3; color: #9d174d; font-weight: 600; font-size: 0.8rem;">
@@ -627,7 +643,7 @@
             Storm Damage Repair
           </h3>
           <p class="text-center mb-4" style="color: #44474a; flex-grow: 1;">
-            Emergency restoration services following heavy wind or storm events.
+            Emergency restoration services following heavy wind or storm events to secure your home immediately.
           </p>
           <div class="text-center">
             <span class="badge px-3 py-2 rounded-pill" style="background: #fee2e2; color: #991b1b; font-weight: 600; font-size: 0.8rem;">
@@ -647,7 +663,7 @@
   </div>
 </section>
 
-<!-- PROJECTS SECTION -->
+<!-- PROJECTS SECTION with roofing project images -->
 <section id="projects" class="py-5 py-md-7" style="background-color: #f8f9ff;">
   <div class="container" style="max-width: 1280px;">
     <div class="text-center mb-5">
@@ -655,7 +671,7 @@
         OUR PORTFOLIO
       </span>
       <h2 class="mb-3" style="font-family: 'Montserrat', sans-serif; font-size: clamp(1.75rem, 4vw, 2.5rem); font-weight: 700; color: #0b1c30;">
-        Featured Projects
+        Featured Roofing Projects
       </h2>
       <p class="mx-auto" style="color: #44474a; max-width: 550px;">
         A showcase of architectural roofing precision across Lagos state.
@@ -666,43 +682,43 @@
       <div class="masonry-wide masonry-tall position-relative overflow-hidden rounded-lg" style="box-shadow: 0 4px 20px rgba(0,0,0,0.1);">
         <img class="w-100 h-100" style="object-fit: cover; transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);" 
              onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'"
-             alt="Victoria Island roofing"
-             src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=80" />
+             alt="Large residential roofing project in Lekki with stone-coated tiles being installed by professional roofers" 
+             src="img2.png" />
         <div class="position-absolute bottom-0 start-0 end-0 p-4" style="background: linear-gradient(to top, rgba(0,0,0,0.85), transparent);">
           <span class="badge mb-2" style="background: #1d4ed8;">RESIDENTIAL</span>
           <h4 class="text-white mb-1" style="font-family: 'Montserrat', sans-serif; font-weight: 700;">Lekki Phase 1 Estate</h4>
-          <p class="text-white-50 mb-0" style="font-size: 0.85rem;">Stone Coated Installation • 450m²</p>
+          <p class="text-white-50 mb-0" style="font-size: 0.85rem;">Stone Coated Roof Installation • 450m²</p>
         </div>
       </div>
       
       <div class="position-relative overflow-hidden rounded-lg" style="box-shadow: 0 4px 20px rgba(0,0,0,0.1);">
         <img class="w-100 h-100" style="object-fit: cover; transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);"
              onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'"
-             alt="Gutter system detail"
-             src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80" />
+             alt="Professional gutter installation on a residential building in Lagos showing proper drainage system" 
+             src="img3.png" />
         <div class="position-absolute bottom-0 start-0 end-0 p-3" style="background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);">
-          <p class="text-white mb-0 fw-bold" style="font-size: 0.9rem;">Premium Gutter System</p>
+          <p class="text-white mb-0 fw-bold" style="font-size: 0.9rem;">Custom Gutter System Installation</p>
         </div>
       </div>
       
       <div class="masonry-tall position-relative overflow-hidden rounded-lg" style="box-shadow: 0 4px 20px rgba(0,0,0,0.1);">
         <img class="w-100 h-100" style="object-fit: cover; transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);"
              onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'"
-             alt="Luxury duplex roof"
-             src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=600&q=80" />
+             alt="Luxury duplex with premium aluminum roofing in Ikoyi Lagos Nigeria" 
+             src="img4.png" />
         <div class="position-absolute bottom-0 start-0 end-0 p-3" style="background: linear-gradient(to top, rgba(0,0,0,0.85), transparent);">
           <span class="badge mb-1" style="background: #FF6D00;">LUXURY</span>
-          <p class="text-white mb-0 fw-bold">Ikoyi Duplex • Aluminum Roof</p>
+          <p class="text-white mb-0 fw-bold">Ikoyi Duplex • Aluminum Roofing</p>
         </div>
       </div>
       
       <div class="position-relative overflow-hidden rounded-lg" style="box-shadow: 0 4px 20px rgba(0,0,0,0.1);">
         <img class="w-100 h-100" style="object-fit: cover; transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);"
              onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'"
-             alt="Apartment complex roof"
-             src="https://images.unsplash.com/photo-1582407947304-fd86f028f716?w=600&q=80" />
+             alt="Apartment complex with newly installed roofing system in Ikeja Lagos" 
+             src="img5.png" />
         <div class="position-absolute bottom-0 start-0 end-0 p-3" style="background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);">
-          <p class="text-white mb-0 fw-bold" style="font-size: 0.9rem;">Apartment Complex</p>
+          <p class="text-white mb-0 fw-bold" style="font-size: 0.9rem;">Apartment Complex • Ikeja</p>
         </div>
       </div>
     </div>
@@ -796,8 +812,8 @@
 
 <!-- CTA SECTION -->
 <section class="py-6 py-md-8 text-white position-relative overflow-hidden" style="background: linear-gradient(135deg, #101519 0%, #1f2937 50%, #111827 100%);">
-  <div class="position-absolute top-0 start-0 w-100 h-100" style="opacity: 0.1;">
-    <div style="width: 100%; height: 100%; background-image: repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(255,255,255,.03) 35px, rgba(255,255,255,.03) 70px);"></div>
+  <div class="position-absolute top-0 start-0 w-100 h-100" style="opacity: 0.08;">
+    <div style="width: 100%; height: 100%; background-image: repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(255,255,255,.05) 35px, rgba(255,255,255,.05) 70px);"></div>
   </div>
   
   <div class="container text-center position-relative" style="max-width: 900px; z-index: 1;">
@@ -806,11 +822,11 @@
     </span>
     
     <h2 class="fw-bold mb-4" style="font-family: 'Montserrat', sans-serif; font-size: clamp(2rem, 5vw, 3rem); line-height: 1.2;">
-      Ready to Transform Your Property?
+      Ready to Transform Your Roof?
     </h2>
     
     <p class="lead mb-5 mx-auto" style="color: #c2c7cd; font-size: 1.15rem; max-width: 650px;">
-      Contact our professional team today for a transparent quote and expert consultation on your roofing needs. No hidden fees, no surprises.
+      Contact our professional team today for a transparent quote and expert consultation on your roofing needs. No hidden fees, no surprises — just quality roofing solutions.
     </p>
     
     <div class="d-flex flex-column flex-md-row justify-content-center align-items-center gap-4">
@@ -840,27 +856,27 @@
       <div class="col-lg-4 mb-4 mb-lg-0">
         <div class="d-flex align-items-center gap-3 mb-4">
           <div style="width: 48px; height: 48px; background: linear-gradient(135deg, #1d4ed8 0%, #4069f2 100%); border-radius: 8px;"></div>
-          <div style="font-family: 'Montserrat', sans-serif; font-size: 1.5rem; font-weight: 700;">
+          <div style="font-family: 'Montserrat', sans-serif; font-size: 1.5rem; font-weight: 700; color: #1d4ed8;">
             GHAPH Roofing
           </div>
         </div>
         <p style="color: #8b9096; font-size: 1rem; line-height: 1.7;">
-          Professional roofing and property services with an industrial edge of excellence. Serving Lagos and beyond since establishment.
+          Professional roofing and property services with an industrial edge of excellence. Serving Lagos and beyond with quality roof installations, repairs, and inspections.
         </p>
         <div class="d-flex gap-3 mt-4">
           <a href="#" class="d-flex align-items-center justify-content-center rounded-circle" 
              style="width: 40px; height: 40px; background: rgba(255,255,255,0.1); color: white; transition: all 0.25s;"
-             onmouseover="this.background='#1d4ed8'" onmouseout="this.background='rgba(255,255,255,0.1)'">
+             onmouseover="this.style.background='#1d4ed8'" onmouseout="this.style.background='rgba(255,255,255,0.1)'">
             <span class="material-symbols-outlined" style="font-size: 1.2rem;">facebook</span>
           </a>
           <a href="#" class="d-flex align-items-center justify-content-center rounded-circle" 
              style="width: 40px; height: 40px; background: rgba(255,255,255,0.1); color: white; transition: all 0.25s;"
-             onmouseover="this.background='#1d4ed8'" onmouseout="this.background='rgba(255,255,255,0.1)'">
+             onmouseover="this.style.background='#1d4ed8'" onmouseout="this.style.background='rgba(255,255,255,0.1)'">
             <span class="material-symbols-outlined" style="font-size: 1.2rem;">photo_camera</span>
           </a>
           <a href="#" class="d-flex align-items-center justify-content-center rounded-circle" 
              style="width: 40px; height: 40px; background: rgba(255,255,255,0.1); color: white; transition: all 0.25s;"
-             onmouseover="this.background='#25D366'" onmouseout="this.background='rgba(255,255,255,0.1)'">
+             onmouseover="this.style.background='#25D366'" onmouseout="this.style.background='rgba(255,255,255,0.1)'">
             <span class="material-symbols-outlined" style="font-size: 1.2rem;">chat</span>
           </a>
         </div>
@@ -897,11 +913,11 @@
           </li>
           <li class="mb-2">
             <a href="#services" style="color: #8b9096; text-decoration: none; transition: color 0.2s;" 
-               onmouseover="this.style.color='#1d4ed8'" onmouseout="this.style.color='#8b9096'">Our Services</a>
+               onmouseover="this.style.color='#1d4ed8'" onmouseout="this.style.color='#8b9096'">Our Roofing Services</a>
           </li>
           <li class="mb-2">
             <a href="#projects" style="color: #8b9096; text-decoration: none; transition: color 0.2s;" 
-               onmouseover="this.style.color='#1d4ed8'" onmouseout="this.style.color='#8b9096'">Projects</a>
+               onmouseover="this.style.color='#1d4ed8'" onmouseout="this.style.color='#8b9096'">Roofing Projects</a>
           </li>
           <li class="mb-2">
             <a href="#" style="color: #8b9096; text-decoration: none; transition: color 0.2s;" 
@@ -924,7 +940,7 @@
         </div>
         <div class="col-md-6 text-md-end">
           <p class="mb-0" style="color: #6b7280; font-size: 0.85rem;">
-            Crafted with excellence in Lagos, Nigeria
+            Professional Roofing Excellence in Lagos, Nigeria
           </p>
         </div>
       </div>
