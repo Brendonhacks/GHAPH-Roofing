@@ -1,0 +1,971 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>GHAPH Roofing - Premier Roofing &amp; Property Excellence in Lagos</title>
+
+  <!-- BOOTSTRAP 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+
+  <!-- TAILWIND PLAY CDN (with plugins) -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+  <!-- GOOGLE FONTS & ICONS -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Inter:wght@400;700&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+
+  <!-- TAILWIND CONFIGURATION -->
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "on-secondary-fixed": "#001551",
+            "on-surface-variant": "#44474a",
+            "inverse-surface": "#213145",
+            "surface-variant": "#d3e4fe",
+            "surface-dim": "#cbdbf5",
+            "on-tertiary-fixed-variant": "#51443d",
+            "on-error-container": "#93000a",
+            "surface": "#f8f9ff",
+            "on-background": "#0b1c30",
+            "on-surface": "#0b1c30",
+            "surface-container": "#e5eeff",
+            "on-secondary-fixed-variant": "#0039b5",
+            "outline-variant": "#c5c6ca",
+            "tertiary-container": "#312620",
+            "outline": "#75777b",
+            "surface-bright": "#f8f9ff",
+            "inverse-on-surface": "#eaf1ff",
+            "on-primary-container": "#8b9096",
+            "on-tertiary-container": "#9d8c84",
+            "primary-container": "#24292e",
+            "on-error": "#ffffff",
+            "surface-tint": "#5a5f65",
+            "background": "#f8f9ff",
+            "tertiary-fixed-dim": "#d6c3ba",
+            "primary-fixed-dim": "#c2c7cd",
+            "tertiary": "#1b120c",
+            "inverse-primary": "#c2c7cd",
+            "on-primary": "#ffffff",
+            "primary-fixed": "#dee3e9",
+            "tertiary-fixed": "#f2dfd5",
+            "secondary-container": "#4069f2",
+            "secondary": "#1d4ed8",
+            "on-primary-fixed": "#171c21",
+            "secondary-fixed": "#dce1ff",
+            "on-tertiary-fixed": "#231914",
+            "surface-container-lowest": "#ffffff",
+            "on-primary-fixed-variant": "#42474d",
+            "on-secondary": "#ffffff",
+            "primary": "#101519",
+            "on-secondary-container": "#fffbff",
+            "error-container": "#ffdad6",
+            "surface-container-low": "#eff4ff",
+            "surface-container-highest": "#d3e4fe",
+            "on-tertiary": "#ffffff",
+            "surface-container-high": "#dce9ff",
+            "error": "#ba1a1a",
+            "secondary-fixed-dim": "#b7c4ff"
+          },
+          borderRadius: {
+            DEFAULT: "0.125rem",
+            lg: "0.25rem",
+            xl: "0.5rem",
+            full: "0.75rem"
+          },
+          spacing: {
+            xs: "4px",
+            margin: "32px",
+            sm: "12px",
+            gutter: "24px",
+            md: "24px",
+            lg: "48px",
+            base: "8px",
+            xl: "80px"
+          },
+          fontFamily: {
+            h1: ["Montserrat"],
+            "label-caps": ["Inter"],
+            "body-md": ["Inter"],
+            h2: ["Montserrat"],
+            "body-lg": ["Inter"],
+            h3: ["Montserrat"]
+          },
+          fontSize: {
+            h1: ["48px", { lineHeight: "1.2", letterSpacing: "-0.02em", fontWeight: "700" }],
+            "label-caps": ["12px", { lineHeight: "1", letterSpacing: "0.1em", fontWeight: "700" }],
+            "body-md": ["16px", { lineHeight: "1.6", fontWeight: "400" }],
+            h2: ["36px", { lineHeight: "1.2", fontWeight: "700" }],
+            "body-lg": ["18px", { lineHeight: "1.6", fontWeight: "400" }],
+            h3: ["24px", { lineHeight: "1.3", fontWeight: "600" }]
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      vertical-align: middle;
+    }
+    .structural-shadow {
+      box-shadow: 4px 4px 0px 0px rgba(36, 41, 46, 0.1);
+    }
+    .structural-shadow:hover {
+      box-shadow: 6px 6px 0px 0px rgba(36, 41, 46, 0.15);
+      transform: translate(-2px, -2px);
+      transition: all 0.2s ease-out;
+    }
+    .masonry-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      grid-auto-rows: 200px;
+      gap: 8px;
+    }
+    .masonry-tall { grid-row: span 2; }
+    .masonry-wide { grid-column: span 2; }
+
+    /* NAVBAR STYLES - Fixed for visibility */
+    .main-navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1050;
+      background-color: #ffffff !important;
+      border-bottom: 2px solid #1d4ed8;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      padding-top: 0.75rem;
+      padding-bottom: 0.75rem;
+    }
+
+    .main-navbar .navbar-brand {
+      color: #101519 !important;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .main-navbar .navbar-brand::before {
+      content: '';
+      display: inline-block;
+      width: 32px;
+      height: 32px;
+      background: linear-gradient(135deg, #1d4ed8 0%, #4069f2 100%);
+      border-radius: 4px;
+    }
+
+    .main-navbar .nav-link {
+      color: #101519 !important;
+      font-weight: 600;
+      font-size: 0.95rem;
+      padding: 0.5rem 1rem !important;
+      transition: all 0.25s ease;
+      border-bottom: 3px solid transparent;
+      margin-bottom: -2px;
+    }
+
+    .main-navbar .nav-link:hover {
+      color: #1d4ed8 !important;
+      background-color: rgba(29, 78, 216, 0.05);
+    }
+
+    .main-navbar .nav-link.active {
+      color: #1d4ed8 !important;
+      border-bottom-color: #1d4ed8;
+      background-color: rgba(29, 78, 216, 0.08);
+    }
+
+    .navbar-toggler-custom {
+      border: 2px solid #1d4ed8 !important;
+      background-color: transparent;
+      padding: 0.5rem 0.75rem;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .navbar-toggler-custom:hover {
+      background-color: rgba(29, 78, 216, 0.1);
+    }
+
+    .navbar-toggler-custom:focus {
+      box-shadow: 0 0 0 3px rgba(29, 78, 216, 0.25) !important;
+    }
+
+    .navbar-toggler-icon-custom {
+      display: block;
+      width: 24px;
+      height: 20px;
+      position: relative;
+    }
+
+    .navbar-toggler-icon-custom span {
+      display: block;
+      position: absolute;
+      height: 3px;
+      width: 100%;
+      background-color: #1d4ed8;
+      border-radius: 2px;
+      left: 0;
+      transition: all 0.3s ease;
+    }
+
+    .navbar-toggler-icon-custom span:nth-child(1) { top: 0; }
+    .navbar-toggler-icon-custom span:nth-child(2) { top: 50%; transform: translateY(-50%); }
+    .navbar-toggler-icon-custom span:nth-child(3) { bottom: 0; }
+
+    /* Mobile nav collapse */
+    @media (max-width: 991.98px) {
+      .navbar-collapse {
+        background-color: #ffffff;
+        padding: 1rem;
+        margin-top: 0.75rem;
+        border: 1px solid #c5c6ca;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      }
+
+      .navbar-nav {
+        gap: 0.25rem !important;
+      }
+
+      .nav-item {
+        border-bottom: 1px solid #eff4ff;
+      }
+
+      .nav-item:last-child {
+        border-bottom: none;
+      }
+
+      .nav-link {
+        padding: 0.75rem 1rem !important;
+        border-radius: 4px !important;
+      }
+    }
+
+    /* Quote button */
+    .btn-quote {
+      background: linear-gradient(135deg, #FF6D00 0%, #e65100 100%);
+      color: white;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 0.6rem 1.5rem;
+      font-size: 0.85rem;
+      border: none;
+      border-radius: 6px;
+      box-shadow: 0 4px 14px rgba(255, 109, 0, 0.35);
+      transition: all 0.25s ease;
+    }
+
+    .btn-quote:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(255, 109, 0, 0.45);
+      color: white;
+    }
+
+    .btn-quote:active {
+      transform: translateY(0);
+    }
+
+    /* Hero buttons */
+    .btn-hero-primary {
+      background: linear-gradient(135deg, #FF6D00 0%, #e65100 100%);
+      color: white;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 0.75rem 2rem;
+      font-size: 0.95rem;
+      border: none;
+      border-radius: 6px;
+      box-shadow: 0 4px 14px rgba(255, 109, 0, 0.35);
+      transition: all 0.25s ease;
+    }
+
+    .btn-hero-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(255, 109, 0, 0.45);
+      color: white;
+    }
+
+    .btn-hero-outline {
+      color: white;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 0.7rem 2rem;
+      font-size: 0.95rem;
+      border: 2px solid rgba(255, 255, 255, 0.6);
+      border-radius: 6px;
+      background: transparent;
+      backdrop-filter: blur(4px);
+      transition: all 0.25s ease;
+    }
+
+    .btn-hero-outline:hover {
+      background-color: rgba(255, 255, 255, 0.15);
+      border-color: white;
+      color: white;
+    }
+
+    /* Body offset for fixed navbar */
+    body {
+      padding-top: 76px;
+    }
+
+    /* Smooth scroll */
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+</head>
+<body class="bg-background text-on-surface font-body-md">
+
+<!-- NAVIGATION - Fixed and fully visible on all screens -->
+<nav class="navbar navbar-expand-lg main-navbar">
+  <div class="container" style="max-width: 1280px;">
+    <a class="navbar-brand" href="#">
+      GHAPH Roofing
+    </a>
+    
+    <button class="navbar-toggler navbar-toggler-custom" type="button" data-bs-toggle="collapse" 
+            data-bs-target="#navbarMain" aria-controls="navbarMain" 
+            aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon-custom">
+        <span></span>
+        <span></span>
+        <span></span>
+      </span>
+    </button>
+    
+    <div class="collapse navbar-collapse" id="navbarMain">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-center gap-1">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#services">Services</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#projects">Projects</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#about">About Us</a>
+        </li>
+        <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
+          <button class="btn btn-quote w-100 w-lg-auto">
+            Get a Quote
+          </button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO SECTION -->
+<header class="position-relative d-flex align-items-center bg-primary overflow-hidden" style="min-height: calc(100vh - 76px); margin-top: -76px; padding-top: 76px;">
+  <div class="position-absolute top-0 start-0 w-100 h-100" style="opacity: 0.45;">
+    <img class="w-100 h-100" style="object-fit: cover;" alt="Professional roof installation in Lagos" 
+         src="https://images.unsplash.com/photo-1632778149955-e80f8ceca2e8?w=1920&q=80" />
+  </div>
+  <div class="position-absolute top-0 start-0 w-100 h-100" style="background: linear-gradient(135deg, rgba(16, 21, 25, 0.92) 0%, rgba(16, 21, 25, 0.75) 100%);"></div>
+  <div class="container position-relative" style="z-index: 10; max-width: 1280px;">
+    <div class="row">
+      <div class="col-lg-8 col-xl-7 text-white py-5 py-md-7">
+        <span class="d-inline-block px-3 py-1 mb-4 rounded-pill" style="background: rgba(29, 78, 216, 0.3); border: 1px solid rgba(29, 78, 216, 0.5); font-size: 0.85rem; font-weight: 600; letter-spacing: 0.05em;">
+          LAGOS TRUSTED ROOFING EXPERTS
+        </span>
+        <h1 class="display-4 fw-bold mb-4" style="font-family: 'Montserrat', sans-serif; line-height: 1.15; font-size: clamp(2rem, 5vw, 3.25rem);">
+          Premier Roofing &amp; Property Excellence in Lagos
+        </h1>
+        <p class="lead mb-5" style="color: #dee3e9; font-size: 1.15rem; max-width: 600px;">
+          Delivering professional roof installation and property services with transparency, integrity, and blueprint-like precision.
+        </p>
+        <div class="d-flex flex-wrap gap-3">
+          <button class="btn btn-hero-primary">
+            Get a Free Quote
+          </button>
+          <button class="btn btn-hero-outline">
+            View Our Projects
+          </button>
+        </div>
+        
+        <!-- Trust badges -->
+        <div class="d-flex flex-wrap gap-4 mt-5 pt-4" style="border-top: 1px solid rgba(255,255,255,0.15);">
+          <div class="d-flex align-items-center gap-2">
+            <span class="material-symbols-outlined" style="color: #FFD700;">star</span>
+            <span style="font-weight: 600;">4.6 Rating</span>
+          </div>
+          <div class="d-flex align-items-center gap-2">
+            <span class="material-symbols-outlined" style="color: #4ade80;">verified</span>
+            <span style="font-weight: 600;">Licensed & Insured</span>
+          </div>
+          <div class="d-flex align-items-center gap-2">
+            <span class="material-symbols-outlined" style="color: #60a5fa;">schedule</span>
+            <span style="font-weight: 600;">Fast Response</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ABOUT SECTION -->
+<section id="about" class="py-5 py-md-7" style="background-color: #f8f9ff;">
+  <div class="container" style="max-width: 1280px;">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-6">
+        <div class="position-relative">
+          <div class="border border-3 p-2 h-100 rounded" style="border-color: #1d4ed8 !important; min-height: 380px;">
+            <img class="w-100 h-100 rounded" style="object-fit: cover;" alt="Luxury Lagos residence roofing"
+                 src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80" />
+          </div>
+          <div class="position-absolute bottom-4 end-4 p-3 rounded shadow-lg" style="background: white;">
+            <div class="text-center">
+              <div style="font-family: 'Montserrat', sans-serif; font-size: 2rem; font-weight: 700; color: #1d4ed8;">500+</div>
+              <div style="font-size: 0.85rem; color: #44474a;">Projects Completed</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <span class="d-block mb-2 fw-bold text-uppercase" style="color: #1d4ed8; font-size: 0.75rem; letter-spacing: 0.15em;">
+          ABOUT GHAPH ROOFING
+        </span>
+        <h2 class="mb-4" style="font-family: 'Montserrat', sans-serif; font-size: clamp(1.75rem, 4vw, 2.5rem); font-weight: 700; line-height: 1.2;">
+          Precision &amp; Integrity in Every Tile
+        </h2>
+        <p class="mb-4" style="color: #44474a; line-height: 1.75; font-size: 1.05rem;">
+          At GHAPH Roofing, we pride ourselves on transparency and professional service. With years of experience serving Lagos homeowners and engineers, we understand that your roof is your home's first line of defense.
+        </p>
+        <p class="mb-4" style="color: #44474a; line-height: 1.75; font-size: 1.05rem;">
+          We treat every project with the blueprint-like precision it deserves, using only premium materials tailored for Nigeria's tropical climate.
+        </p>
+        
+        <div class="row g-3 mb-4">
+          <div class="col-6">
+            <div class="d-flex align-items-center gap-2 p-3 rounded" style="background: #eff4ff;">
+              <span class="material-symbols-outlined" style="color: #1d4ed8;">check_circle</span>
+              <span style="font-weight: 600; font-size: 0.9rem;">Quality Materials</span>
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="d-flex align-items-center gap-2 p-3 rounded" style="background: #eff4ff;">
+              <span class="material-symbols-outlined" style="color: #1d4ed8;">check_circle</span>
+              <span style="font-weight: 600; font-size: 0.9rem;">Expert Team</span>
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="d-flex align-items-center gap-2 p-3 rounded" style="background: #eff4ff;">
+              <span class="material-symbols-outlined" style="color: #1d4ed8;">check_circle</span>
+              <span style="font-weight: 600; font-size: 0.9rem;">Transparent Pricing</span>
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="d-flex align-items-center gap-2 p-3 rounded" style="background: #eff4ff;">
+              <span class="material-symbols-outlined" style="color: #1d4ed8;">check_circle</span>
+              <span style="font-weight: 600; font-size: 0.9rem;">Warranty Included</span>
+            </div>
+          </div>
+        </div>
+        
+        <a href="#" class="btn d-inline-flex align-items-center gap-2 fw-bold" 
+           style="color: #1d4ed8; background: transparent; border: 2px solid #1d4ed8; padding: 0.7rem 1.75rem; border-radius: 6px; text-decoration: none; transition: all 0.25s;">
+          Learn More About Us
+          <span class="material-symbols-outlined" style="font-size: 1.2rem;">arrow_forward</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES SECTION -->
+<section id="services" class="py-5 py-md-7" style="background-color: #eff4ff;">
+  <div class="container" style="max-width: 1280px;">
+    <div class="text-center mb-5">
+      <span class="d-block mb-2 fw-bold text-uppercase" style="color: #1d4ed8; font-size: 0.75rem; letter-spacing: 0.15em;">
+        WHAT WE OFFER
+      </span>
+      <h2 class="mb-3" style="font-family: 'Montserrat', sans-serif; font-size: clamp(1.75rem, 4vw, 2.5rem); font-weight: 700; color: #0b1c30;">
+        Professional Services
+      </h2>
+      <p class="mx-auto" style="color: #44474a; max-width: 550px; font-size: 1.1rem;">
+        Structured solutions for long-lasting protection of your most valuable asset.
+      </p>
+    </div>
+    
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100 p-4 rounded-lg border-0" style="background-color: #ffffff; box-shadow: 0 4px 20px rgba(0,0,0,0.06); transition: all 0.3s ease;" 
+             onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 12px 40px rgba(29,78,216,0.15)'" 
+             onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 20px rgba(0,0,0,0.06)'">
+          <div class="d-flex align-items-center justify-content-center mb-4 rounded-circle mx-auto" 
+               style="width: 64px; height: 64px; background: linear-gradient(135deg, #1d4ed8 0%, #4069f2 100%);">
+            <span class="material-symbols-outlined text-white" style="font-size: 2rem;">roofing</span>
+          </div>
+          <h3 class="text-center mb-3" style="font-family: 'Montserrat', sans-serif; font-size: 1.35rem; font-weight: 700; color: #0b1c30;">
+            Roof Installation
+          </h3>
+          <p class="text-center mb-4" style="color: #44474a; flex-grow: 1;">
+            Full installation using premium stone-coated or aluminum materials tailored for the Lagos climate.
+          </p>
+          <div class="text-center">
+            <span class="badge px-3 py-2 rounded-pill" style="background: #e5eeff; color: #1d4ed8; font-weight: 600; font-size: 0.8rem;">
+              INSTALLATION
+            </span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100 p-4 rounded-lg border-0" style="background-color: #ffffff; box-shadow: 0 4px 20px rgba(0,0,0,0.06); transition: all 0.3s ease;"
+             onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 12px 40px rgba(29,78,216,0.15)'" 
+             onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 20px rgba(0,0,0,0.06)'">
+          <div class="d-flex align-items-center justify-content-center mb-4 rounded-circle mx-auto" 
+               style="width: 64px; height: 64px; background: linear-gradient(135deg, #1d4ed8 0%, #4069f2 100%);">
+            <span class="material-symbols-outlined text-white" style="font-size: 2rem;">water_damage</span>
+          </div>
+          <h3 class="text-center mb-3" style="font-family: 'Montserrat', sans-serif; font-size: 1.35rem; font-weight: 700; color: #0b1c30;">
+            Gutter Repairs
+          </h3>
+          <p class="text-center mb-4" style="color: #44474a; flex-grow: 1;">
+            Expert diagnostic and repair services for leaking or sagging gutter systems.
+          </p>
+          <div class="text-center">
+            <span class="badge px-3 py-2 rounded-pill" style="background: #fef3c7; color: #92400e; font-weight: 600; font-size: 0.8rem;">
+              REPAIR
+            </span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100 p-4 rounded-lg border-0" style="background-color: #ffffff; box-shadow: 0 4px 20px rgba(0,0,0,0.06); transition: all 0.3s ease;"
+             onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 12px 40px rgba(29,78,216,0.15)'" 
+             onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 20px rgba(0,0,0,0.06)'">
+          <div class="d-flex align-items-center justify-content-center mb-4 rounded-circle mx-auto" 
+               style="width: 64px; height: 64px; background: linear-gradient(135deg, #1d4ed8 0%, #4069f2 100%);">
+            <span class="material-symbols-outlined text-white" style="font-size: 2rem;">build</span>
+          </div>
+          <h3 class="text-center mb-3" style="font-family: 'Montserrat', sans-serif; font-size: 1.35rem; font-weight: 700; color: #0b1c30;">
+            Roof Damage Repair
+          </h3>
+          <p class="text-center mb-4" style="color: #44474a; flex-grow: 1;">
+            Rapid response to leaks, missing tiles, and structural wear from weather damage.
+          </p>
+          <div class="text-center">
+            <span class="badge px-3 py-2 rounded-pill" style="background: #dbeafe; color: #1e40af; font-weight: 600; font-size: 0.8rem;">
+              MAINTENANCE
+            </span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100 p-4 rounded-lg border-0" style="background-color: #ffffff; box-shadow: 0 4px 20px rgba(0,0,0,0.06); transition: all 0.3s ease;"
+             onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 12px 40px rgba(29,78,216,0.15)'" 
+             onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 20px rgba(0,0,0,0.06)'">
+          <div class="d-flex align-items-center justify-content-center mb-4 rounded-circle mx-auto" 
+               style="width: 64px; height: 64px; background: linear-gradient(135deg, #1d4ed8 0%, #4069f2 100%);">
+            <span class="material-symbols-outlined text-white" style="font-size: 2rem;">plumbing</span>
+          </div>
+          <h3 class="text-center mb-3" style="font-family: 'Montserrat', sans-serif; font-size: 1.35rem; font-weight: 700; color: #0b1c30;">
+            Gutter Installation
+          </h3>
+          <p class="text-center mb-4" style="color: #44474a; flex-grow: 1;">
+            Customized drainage solutions engineered for heavy tropical rainfall patterns.
+          </p>
+          <div class="text-center">
+            <span class="badge px-3 py-2 rounded-pill" style="background: #e5eeff; color: #1d4ed8; font-weight: 600; font-size: 0.8rem;">
+              INSTALLATION
+            </span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100 p-4 rounded-lg border-0" style="background-color: #ffffff; box-shadow: 0 4px 20px rgba(0,0,0,0.06); transition: all 0.3s ease;"
+             onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 12px 40px rgba(29,78,216,0.15)'" 
+             onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 20px rgba(0,0,0,0.06)'">
+          <div class="d-flex align-items-center justify-content-center mb-4 rounded-circle mx-auto" 
+               style="width: 64px; height: 64px; background: linear-gradient(135deg, #1d4ed8 0%, #4069f2 100%);">
+            <span class="material-symbols-outlined text-white" style="font-size: 2rem;">search</span>
+          </div>
+          <h3 class="text-center mb-3" style="font-family: 'Montserrat', sans-serif; font-size: 1.35rem; font-weight: 700; color: #0b1c30;">
+            Roof Inspection
+          </h3>
+          <p class="text-center mb-4" style="color: #44474a; flex-grow: 1;">
+            Comprehensive 21-point inspection reports for property buyers and owners.
+          </p>
+          <div class="text-center">
+            <span class="badge px-3 py-2 rounded-pill" style="background: #fce7f3; color: #9d174d; font-weight: 600; font-size: 0.8rem;">
+              DIAGNOSTIC
+            </span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100 p-4 rounded-lg border-0" style="background-color: #ffffff; box-shadow: 0 4px 20px rgba(0,0,0,0.06); transition: all 0.3s ease;"
+             onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 12px 40px rgba(29,78,216,0.15)'" 
+             onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 20px rgba(0,0,0,0.06)'">
+          <div class="d-flex align-items-center justify-content-center mb-4 rounded-circle mx-auto" 
+               style="width: 64px; height: 64px; background: linear-gradient(135deg, #dc2626 0%, #ef4444 100%);">
+            <span class="material-symbols-outlined text-white" style="font-size: 2rem;">storm</span>
+          </div>
+          <h3 class="text-center mb-3" style="font-family: 'Montserrat', sans-serif; font-size: 1.35rem; font-weight: 700; color: #0b1c30;">
+            Storm Damage Repair
+          </h3>
+          <p class="text-center mb-4" style="color: #44474a; flex-grow: 1;">
+            Emergency restoration services following heavy wind or storm events.
+          </p>
+          <div class="text-center">
+            <span class="badge px-3 py-2 rounded-pill" style="background: #fee2e2; color: #991b1b; font-weight: 600; font-size: 0.8rem;">
+              EMERGENCY
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="text-center mt-5 pt-4">
+      <button class="btn structural-shadow px-4 py-3" style="background: #101519; color: white; font-weight: 700; font-size: 0.95rem; border-radius: 6px;">
+        View All Services
+        <span class="material-symbols-outlined ms-2" style="vertical-align: middle;">arrow_forward</span>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS SECTION -->
+<section id="projects" class="py-5 py-md-7" style="background-color: #f8f9ff;">
+  <div class="container" style="max-width: 1280px;">
+    <div class="text-center mb-5">
+      <span class="d-block mb-2 fw-bold text-uppercase" style="color: #1d4ed8; font-size: 0.75rem; letter-spacing: 0.15em;">
+        OUR PORTFOLIO
+      </span>
+      <h2 class="mb-3" style="font-family: 'Montserrat', sans-serif; font-size: clamp(1.75rem, 4vw, 2.5rem); font-weight: 700; color: #0b1c30;">
+        Featured Projects
+      </h2>
+      <p class="mx-auto" style="color: #44474a; max-width: 550px;">
+        A showcase of architectural roofing precision across Lagos state.
+      </p>
+    </div>
+    
+    <div class="masonry-grid">
+      <div class="masonry-wide masonry-tall position-relative overflow-hidden rounded-lg" style="box-shadow: 0 4px 20px rgba(0,0,0,0.1);">
+        <img class="w-100 h-100" style="object-fit: cover; transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);" 
+             onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'"
+             alt="Victoria Island roofing"
+             src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=80" />
+        <div class="position-absolute bottom-0 start-0 end-0 p-4" style="background: linear-gradient(to top, rgba(0,0,0,0.85), transparent);">
+          <span class="badge mb-2" style="background: #1d4ed8;">RESIDENTIAL</span>
+          <h4 class="text-white mb-1" style="font-family: 'Montserrat', sans-serif; font-weight: 700;">Lekki Phase 1 Estate</h4>
+          <p class="text-white-50 mb-0" style="font-size: 0.85rem;">Stone Coated Installation • 450m²</p>
+        </div>
+      </div>
+      
+      <div class="position-relative overflow-hidden rounded-lg" style="box-shadow: 0 4px 20px rgba(0,0,0,0.1);">
+        <img class="w-100 h-100" style="object-fit: cover; transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);"
+             onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'"
+             alt="Gutter system detail"
+             src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80" />
+        <div class="position-absolute bottom-0 start-0 end-0 p-3" style="background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);">
+          <p class="text-white mb-0 fw-bold" style="font-size: 0.9rem;">Premium Gutter System</p>
+        </div>
+      </div>
+      
+      <div class="masonry-tall position-relative overflow-hidden rounded-lg" style="box-shadow: 0 4px 20px rgba(0,0,0,0.1);">
+        <img class="w-100 h-100" style="object-fit: cover; transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);"
+             onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'"
+             alt="Luxury duplex roof"
+             src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=600&q=80" />
+        <div class="position-absolute bottom-0 start-0 end-0 p-3" style="background: linear-gradient(to top, rgba(0,0,0,0.85), transparent);">
+          <span class="badge mb-1" style="background: #FF6D00;">LUXURY</span>
+          <p class="text-white mb-0 fw-bold">Ikoyi Duplex • Aluminum Roof</p>
+        </div>
+      </div>
+      
+      <div class="position-relative overflow-hidden rounded-lg" style="box-shadow: 0 4px 20px rgba(0,0,0,0.1);">
+        <img class="w-100 h-100" style="object-fit: cover; transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);"
+             onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'"
+             alt="Apartment complex roof"
+             src="https://images.unsplash.com/photo-1582407947304-fd86f028f716?w=600&q=80" />
+        <div class="position-absolute bottom-0 start-0 end-0 p-3" style="background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);">
+          <p class="text-white mb-0 fw-bold" style="font-size: 0.9rem;">Apartment Complex</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="mt-5 text-center">
+      <button class="btn structural-shadow px-4 py-3" style="background: #101519; color: white; font-weight: 700; font-size: 0.95rem; border-radius: 6px;">
+        View All Projects
+        <span class="material-symbols-outlined ms-2" style="vertical-align: middle;">arrow_forward</span>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="py-5 py-md-7" style="background-color: #e5eeff;">
+  <div class="container" style="max-width: 1280px;">
+    <div class="text-center mb-5">
+      <span class="d-block mb-2 fw-bold text-uppercase" style="color: #1d4ed8; font-size: 0.75rem; letter-spacing: 0.15em;">
+        TESTIMONIALS
+      </span>
+      <h2 class="mb-3" style="font-family: 'Montserrat', sans-serif; font-size: clamp(1.75rem, 4vw, 2.5rem); font-weight: 700; color: #0b1c30;">
+        Trusted by Property Owners
+      </h2>
+    </div>
+    
+    <div class="row g-4">
+      <div class="col-md-6">
+        <div class="card h-100 p-4 p-md-5 position-relative border-0 rounded-lg" 
+             style="background-color: #ffffff; box-shadow: 0 4px 20px rgba(0,0,0,0.06);">
+          <span class="material-symbols-outlined position-absolute top-4 end-4" 
+                style="font-size: 3rem; color: #4069f2; opacity: 0.3;">format_quote</span>
+          
+          <div class="d-flex gap-1 mb-4">
+            <span class="material-symbols-outlined" style="color: #FFD700; font-size: 1.5rem;">star</span>
+            <span class="material-symbols-outlined" style="color: #FFD700; font-size: 1.5rem;">star</span>
+            <span class="material-symbols-outlined" style="color: #FFD700; font-size: 1.5rem;">star</span>
+            <span class="material-symbols-outlined" style="color: #FFD700; font-size: 1.5rem;">star</span>
+            <span class="material-symbols-outlined" style="color: #FFD700; font-size: 1.5rem;">star_half</span>
+          </div>
+          
+          <p class="fst-italic mb-4" style="line-height: 1.8; font-size: 1.05rem; color: #333;">
+            "The transparency style is so amazing. So detailed in his dealings and customer service is lovely. They gave us peace of mind through the entire process. Our new roof looks absolutely stunning!"
+          </p>
+          
+          <div class="d-flex align-items-center pt-3" style="border-top: 1px solid #e5eeff;">
+            <div class="me-3 rounded-circle d-flex align-items-center justify-content-center" 
+                 style="width: 48px; height: 48px; background: linear-gradient(135deg, #1d4ed8 0%, #4069f2 100%);">
+              <span class="text-white fw-bold">AO</span>
+            </div>
+            <div>
+              <p class="fw-bold mb-0" style="color: #0b1c30;">Adaeze Okonkwo</p>
+              <small style="color: #44474a;">Homeowner, Lekki Phase 1</small>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-md-6">
+        <div class="card h-100 p-4 p-md-5 position-relative border-0 rounded-lg" 
+             style="background-color: #ffffff; box-shadow: 0 4px 20px rgba(0,0,0,0.06);">
+          <span class="material-symbols-outlined position-absolute top-4 end-4" 
+                style="font-size: 3rem; color: #4069f2; opacity: 0.3;">format_quote</span>
+          
+          <div class="d-flex gap-1 mb-4">
+            <span class="material-symbols-outlined" style="color: #FFD700; font-size: 1.5rem;">star</span>
+            <span class="material-symbols-outlined" style="color: #FFD700; font-size: 1.5rem;">star</span>
+            <span class="material-symbols-outlined" style="color: #FFD700; font-size: 1.5rem;">star</span>
+            <span class="material-symbols-outlined" style="color: #FFD700; font-size: 1.5rem;">star</span>
+            <span class="material-symbols-outlined" style="color: #FFD700; font-size: 1.5rem;">star</span>
+          </div>
+          
+          <p class="fst-italic mb-4" style="line-height: 1.8; font-size: 1.05rem; color: #333;">
+            "They are professional roofers... executed many projects together. The structural integrity and material quality is consistent across every site. Highly recommended for any serious construction project."
+          </p>
+          
+          <div class="d-flex align-items-center pt-3" style="border-top: 1px solid #e5eeff;">
+            <div class="me-3 rounded-circle d-flex align-items-center justify-content-center" 
+                 style="width: 48px; height: 48px; background: linear-gradient(135deg, #101519 0%, #374151 100%);">
+              <span class="text-white fw-bold">EA</span>
+            </div>
+            <div>
+              <p class="fw-bold mb-0" style="color: #0b1c30;">Engr. Adeyemi</p>
+              <small style="color: #44474a;">Civil Engineer, Ikeja</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA SECTION -->
+<section class="py-6 py-md-8 text-white position-relative overflow-hidden" style="background: linear-gradient(135deg, #101519 0%, #1f2937 50%, #111827 100%);">
+  <div class="position-absolute top-0 start-0 w-100 h-100" style="opacity: 0.1;">
+    <div style="width: 100%; height: 100%; background-image: repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(255,255,255,.03) 35px, rgba(255,255,255,.03) 70px);"></div>
+  </div>
+  
+  <div class="container text-center position-relative" style="max-width: 900px; z-index: 1;">
+    <span class="d-inline-block px-4 py-2 mb-4 rounded-full" style="background: rgba(29, 78, 216, 0.2); border: 1px solid rgba(29, 78, 216, 0.4); font-size: 0.85rem; font-weight: 600; letter-spacing: 0.1em;">
+      START YOUR PROJECT TODAY
+    </span>
+    
+    <h2 class="fw-bold mb-4" style="font-family: 'Montserrat', sans-serif; font-size: clamp(2rem, 5vw, 3rem); line-height: 1.2;">
+      Ready to Transform Your Property?
+    </h2>
+    
+    <p class="lead mb-5 mx-auto" style="color: #c2c7cd; font-size: 1.15rem; max-width: 650px;">
+      Contact our professional team today for a transparent quote and expert consultation on your roofing needs. No hidden fees, no surprises.
+    </p>
+    
+    <div class="d-flex flex-column flex-md-row justify-content-center align-items-center gap-4">
+      <a class="btn d-flex align-items-center justify-content-center gap-3 fw-bold" 
+         style="background: linear-gradient(135deg, #25D366 0%, #128C7E 100%); color: white; border: none; padding: 1rem 2.5rem; font-size: 1.1rem; border-radius: 50px; box-shadow: 0 8px 30px rgba(37, 211, 102, 0.35); transition: all 0.3s;"
+         href="https://wa.me/2348091163061"
+         onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 12px 40px rgba(37, 211, 102, 0.45)'"
+         onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 30px rgba(37, 211, 102, 0.35)'">
+        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+        Message on WhatsApp
+      </a>
+      
+      <div class="text-md-start text-center ps-md-4" style="border-left: 2px solid rgba(255,255,255,0.2);">
+        <p class="text-uppercase mb-1" style="font-size: 0.75rem; letter-spacing: 0.15em; color: #8b9096;">DIRECT LINE</p>
+        <a href="tel:+2348091163061" class="text-decoration-none" style="font-family: 'Montserrat', sans-serif; font-size: 1.75rem; font-weight: 700; color: white;">
+          0809 116 3061
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="pt-6 pb-4 text-white" style="background-color: #0a0d10; border-top: 3px solid #1d4ed8;">
+  <div class="container" style="max-width: 1280px;">
+    <div class="row g-4">
+      <div class="col-lg-4 mb-4 mb-lg-0">
+        <div class="d-flex align-items-center gap-3 mb-4">
+          <div style="width: 48px; height: 48px; background: linear-gradient(135deg, #1d4ed8 0%, #4069f2 100%); border-radius: 8px;"></div>
+          <div style="font-family: 'Montserrat', sans-serif; font-size: 1.5rem; font-weight: 700;">
+            GHAPH Roofing
+          </div>
+        </div>
+        <p style="color: #8b9096; font-size: 1rem; line-height: 1.7;">
+          Professional roofing and property services with an industrial edge of excellence. Serving Lagos and beyond since establishment.
+        </p>
+        <div class="d-flex gap-3 mt-4">
+          <a href="#" class="d-flex align-items-center justify-content-center rounded-circle" 
+             style="width: 40px; height: 40px; background: rgba(255,255,255,0.1); color: white; transition: all 0.25s;"
+             onmouseover="this.background='#1d4ed8'" onmouseout="this.background='rgba(255,255,255,0.1)'">
+            <span class="material-symbols-outlined" style="font-size: 1.2rem;">facebook</span>
+          </a>
+          <a href="#" class="d-flex align-items-center justify-content-center rounded-circle" 
+             style="width: 40px; height: 40px; background: rgba(255,255,255,0.1); color: white; transition: all 0.25s;"
+             onmouseover="this.background='#1d4ed8'" onmouseout="this.background='rgba(255,255,255,0.1)'">
+            <span class="material-symbols-outlined" style="font-size: 1.2rem;">photo_camera</span>
+          </a>
+          <a href="#" class="d-flex align-items-center justify-content-center rounded-circle" 
+             style="width: 40px; height: 40px; background: rgba(255,255,255,0.1); color: white; transition: all 0.25s;"
+             onmouseover="this.background='#25D366'" onmouseout="this.background='rgba(255,255,255,0.1)'">
+            <span class="material-symbols-outlined" style="font-size: 1.2rem;">chat</span>
+          </a>
+        </div>
+      </div>
+      
+      <div class="col-sm-6 col-lg-4">
+        <h5 class="text-uppercase mb-4" style="font-size: 0.8rem; letter-spacing: 0.15em; color: #b7c4ff; font-weight: 700;">
+          CONTACT INFO
+        </h5>
+        <ul class="list-unstyled" style="color: #8b9096; font-size: 0.95rem;">
+          <li class="d-flex gap-3 align-items-start mb-3">
+            <span class="material-symbols-outlined" style="color: #1d4ed8; font-size: 1.3rem;">location_on</span>
+            <span>101 Old Otta Road, Agege, Lagos State, Nigeria</span>
+          </li>
+          <li class="d-flex gap-3 align-items-center mb-3">
+            <span class="material-symbols-outlined" style="color: #1d4ed8; font-size: 1.3rem;">call</span>
+            <a href="tel:+2348091163061" style="color: #8b9096; text-decoration: none;">0809 116 3061</a>
+          </li>
+          <li class="d-flex gap-3 align-items-center">
+            <span class="material-symbols-outlined" style="color: #1d4ed8; font-size: 1.3rem;">email</span>
+            <a href="mailto:info@ghaphroofing.com" style="color: #8b9096; text-decoration: none;">info@ghaphroofing.com</a>
+          </li>
+        </ul>
+      </div>
+      
+      <div class="col-sm-6 col-lg-4">
+        <h5 class="text-uppercase mb-4" style="font-size: 0.8rem; letter-spacing: 0.15em; color: #b7c4ff; font-weight: 700;">
+          QUICK LINKS
+        </h5>
+        <ul class="list-unstyled" style="color: #8b9096; font-size: 0.95rem;">
+          <li class="mb-2">
+            <a href="#" style="color: #8b9096; text-decoration: none; transition: color 0.2s;" 
+               onmouseover="this.style.color='#1d4ed8'" onmouseout="this.style.color='#8b9096'">Home</a>
+          </li>
+          <li class="mb-2">
+            <a href="#services" style="color: #8b9096; text-decoration: none; transition: color 0.2s;" 
+               onmouseover="this.style.color='#1d4ed8'" onmouseout="this.style.color='#8b9096'">Our Services</a>
+          </li>
+          <li class="mb-2">
+            <a href="#projects" style="color: #8b9096; text-decoration: none; transition: color 0.2s;" 
+               onmouseover="this.style.color='#1d4ed8'" onmouseout="this.style.color='#8b9096'">Projects</a>
+          </li>
+          <li class="mb-2">
+            <a href="#" style="color: #8b9096; text-decoration: none; transition: color 0.2s;" 
+               onmouseover="this.style.color='#1d4ed8'" onmouseout="this.style.color='#8b9096'">Privacy Policy</a>
+          </li>
+          <li>
+            <a href="#" style="color: #8b9096; text-decoration: none; transition: color 0.2s;" 
+               onmouseover="this.style.color='#1d4ed8'" onmouseout="this.style.color='#8b9096'">Terms of Service</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="pt-4 mt-4" style="border-top: 1px solid rgba(255,255,255,0.1);">
+      <div class="row align-items-center">
+        <div class="col-md-6">
+          <p class="mb-3 mb-md-0" style="color: #6b7280; font-size: 0.9rem;">
+            © 2024 GHAPH Roofing and Properties Services. All rights reserved.
+          </p>
+        </div>
+        <div class="col-md-6 text-md-end">
+          <p class="mb-0" style="color: #6b7280; font-size: 0.85rem;">
+            Crafted with excellence in Lagos, Nigeria
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- BOOTSTRAP JS BUNDLE -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+<script>
+  // Navbar scroll effect
+  const navbar = document.querySelector('.main-navbar');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+      navbar.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.12)';
+    } else {
+      navbar.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.08)';
+    }
+  });
+
+  // Active nav link update on scroll
+  const sections = document.querySelectorAll('section[id]');
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop - 100;
+      if (window.scrollY >= sectionTop) {
+        current = section.getAttribute('id');
+      }
+    });
+
+    document.querySelectorAll('.nav-link').forEach(link => {
+      link.classList.remove('active');
+      if (link.getAttribute('href') === `#${current}`) {
+        link.classList.add('active');
+      }
+    });
+  });
+</script>
+</body>
+</html>
