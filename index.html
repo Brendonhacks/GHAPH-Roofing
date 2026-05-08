@@ -159,14 +159,14 @@
       gap: 0.5rem;
     }
 
-    .main-navbar .navbar-brand::before {
+    /* .main-navbar .navbar-brand::before {
       content: '';
       display: inline-block;
       width: 32px;
       height: 32px;
       background: linear-gradient(135deg, #1d4ed8 0%, #4069f2 100%);
       border-radius: 4px;
-    }
+    } */
 
     .main-navbar .nav-link {
       color: #1d4ed8 !important;
@@ -343,6 +343,34 @@
     visibility: visible !important;
     opacity: 1 !important;
     }
+
+    /* About section badge responsive positioning */
+    .about-badge-wrapper {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      z-index: 2;
+      transform: translate(8px, 25%);
+    }
+    
+    @media (max-width: 767.98px) {
+      .about-badge-wrapper {
+        transform: translate(4px, 25%);
+      }
+      
+      .about-badge-wrapper .badge-card {
+        padding: 0.5rem !important;
+        min-width: 100px;
+      }
+      
+      .about-badge-wrapper .badge-number {
+        font-size: 1.5rem !important;
+      }
+      
+      .about-badge-wrapper .badge-text {
+        font-size: 0.7rem !important;
+      }
+    }
   </style>
 </head>
 <body class="bg-background text-on-surface font-body-md">
@@ -392,7 +420,7 @@
 <header class="position-relative d-flex align-items-center bg-primary overflow-hidden" style="min-height: 100vh; padding-top: 76px;">
   <div class="position-absolute top-0 start-0 w-100 h-100" style="opacity: 0.5;">
     <img class="w-100 h-100" style="object-fit: cover;" alt="Professional roof installation in Lagos Nigeria with workers installing stone-coated roofing tiles" 
-         src="img/hero_image.png" />
+         src="hero_image.png" />
   </div>
   <div class="position-absolute top-0 start-0 w-100 h-100" style="background: linear-gradient(135deg, rgba(16, 21, 25, 0.92) 0%, rgba(16, 21, 25, 0.75) 100%);"></div>
   <div class="container position-relative" style="z-index: 10; max-width: 1280px;">
@@ -438,72 +466,72 @@
 
 <!-- ABOUT SECTION with roofing work image -->
 <section id="about" class="py-5 py-md-7" style="background-color: #f8f9ff;">
-  <div class="container" style="max-width: 1280px;">
-    <div class="row align-items-center g-5">
-      <div class="col-lg-6">
-        <div class="position-relative">
-          <div class="border border-3 p-2 h-100 rounded" style="border-color: #1d4ed8 !important; min-height: 380px;">
-            <img class="w-100 h-100 rounded" style="object-fit: cover;" alt="Professional roofer installing stone-coated roofing tiles on a residential building in Lagos" 
-                 src="img/img1.png" />
-          </div>
-          <div class="position-absolute bottom-4 end-4 p-3 rounded shadow-lg" style="background: white;">
-            <div class="text-center">
-              <div style="font-family: 'Montserrat', sans-serif; font-size: 2rem; font-weight: 700; color: #1d4ed8;">500+</div>
-              <div style="font-size: 0.85rem; color: #44474a;">Projects Completed</div>
+    <div class="container" style="max-width: 1280px;">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-6">
+          <div class="position-relative" style="padding-bottom: 40px;">
+            <div class="border border-3 rounded" style="border-color: #1d4ed8 !important; overflow: hidden;">
+              <img class="w-100 d-block" style="object-fit: cover; min-height: 380px; max-height: 500px;" alt="Professional roofer installing stone-coated roofing tiles on a residential building in Lagos" 
+                   src="img/img1.png" />
+            </div>
+            <div style="position: absolute; bottom: 0; right: 20px; z-index: 2;">
+              <div class="p-3 rounded shadow-lg text-center" style="background: white; min-width: 120px;">
+                <div style="font-family: 'Montserrat', sans-serif; font-size: clamp(1.5rem, 5vw, 2rem); font-weight: 700; color: #1d4ed8;">500+</div>
+                <div style="font-size: clamp(0.7rem, 2.5vw, 0.85rem); color: #44474a;">Projects Completed</div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <div class="col-lg-6">
-        <span class="d-block mb-2 fw-bold text-uppercase" style="color: #1d4ed8; font-size: 0.75rem; letter-spacing: 0.15em;">
-          ABOUT GHAPH ROOFING
-        </span>
-        <h2 class="mb-4" style="font-family: 'Montserrat', sans-serif; font-size: clamp(1.75rem, 4vw, 2.5rem); font-weight: 700; line-height: 1.2;">
-          Precision &amp; Integrity in Every Tile
-        </h2>
-        <p class="mb-4" style="color: #44474a; line-height: 1.75; font-size: 1.05rem;">
-          At GHAPH Roofing, we pride ourselves on transparency and professional service. With years of experience serving Lagos homeowners and engineers, we understand that your roof is your home's first line of defense.
-        </p>
-        <p class="mb-4" style="color: #44474a; line-height: 1.75; font-size: 1.05rem;">
-          We treat every project with the blueprint-like precision it deserves, using only premium materials tailored for Nigeria's tropical climate.
-        </p>
-        
-        <div class="row g-3 mb-4">
-          <div class="col-6">
-            <div class="d-flex align-items-center gap-2 p-3 rounded" style="background: #eff4ff;">
-              <span class="material-symbols-outlined" style="color: #1d4ed8;">check_circle</span>
-              <span style="font-weight: 600; font-size: 0.9rem;">Quality Materials</span>
+        <div class="col-lg-6">
+          <span class="d-block mb-2 fw-bold text-uppercase" style="color: #1d4ed8; font-size: 0.75rem; letter-spacing: 0.15em;">
+            ABOUT GHAPH ROOFING
+          </span>
+          <h2 class="mb-4" style="font-family: 'Montserrat', sans-serif; font-size: clamp(1.75rem, 4vw, 2.5rem); font-weight: 700; line-height: 1.2;">
+            Precision &amp; Integrity in Every Tile
+          </h2>
+          <p class="mb-4" style="color: #44474a; line-height: 1.75; font-size: 1.05rem;">
+            At GHAPH Roofing, we pride ourselves on transparency and professional service. With years of experience serving Lagos homeowners and engineers, we understand that your roof is your home's first line of defense.
+          </p>
+          <p class="mb-4" style="color: #44474a; line-height: 1.75; font-size: 1.05rem;">
+            We treat every project with the blueprint-like precision it deserves, using only premium materials tailored for Nigeria's tropical climate.
+          </p>
+          
+          <div class="row g-3 mb-4">
+            <div class="col-6">
+              <div class="d-flex align-items-center gap-2 p-3 rounded" style="background: #eff4ff;">
+                <span class="material-symbols-outlined" style="color: #1d4ed8;">check_circle</span>
+                <span style="font-weight: 600; font-size: 0.9rem;">Quality Materials</span>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="d-flex align-items-center gap-2 p-3 rounded" style="background: #eff4ff;">
+                <span class="material-symbols-outlined" style="color: #1d4ed8;">check_circle</span>
+                <span style="font-weight: 600; font-size: 0.9rem;">Expert Team</span>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="d-flex align-items-center gap-2 p-3 rounded" style="background: #eff4ff;">
+                <span class="material-symbols-outlined" style="color: #1d4ed8;">check_circle</span>
+                <span style="font-weight: 600; font-size: 0.9rem;">Transparent Pricing</span>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="d-flex align-items-center gap-2 p-3 rounded" style="background: #eff4ff;">
+                <span class="material-symbols-outlined" style="color: #1d4ed8;">check_circle</span>
+                <span style="font-weight: 600; font-size: 0.9rem;">Warranty Included</span>
+              </div>
             </div>
           </div>
-          <div class="col-6">
-            <div class="d-flex align-items-center gap-2 p-3 rounded" style="background: #eff4ff;">
-              <span class="material-symbols-outlined" style="color: #1d4ed8;">check_circle</span>
-              <span style="font-weight: 600; font-size: 0.9rem;">Expert Team</span>
-            </div>
-          </div>
-          <div class="col-6">
-            <div class="d-flex align-items-center gap-2 p-3 rounded" style="background: #eff4ff;">
-              <span class="material-symbols-outlined" style="color: #1d4ed8;">check_circle</span>
-              <span style="font-weight: 600; font-size: 0.9rem;">Transparent Pricing</span>
-            </div>
-          </div>
-          <div class="col-6">
-            <div class="d-flex align-items-center gap-2 p-3 rounded" style="background: #eff4ff;">
-              <span class="material-symbols-outlined" style="color: #1d4ed8;">check_circle</span>
-              <span style="font-weight: 600; font-size: 0.9rem;">Warranty Included</span>
-            </div>
-          </div>
+          
+          <a href="#" class="btn d-inline-flex align-items-center gap-2 fw-bold" 
+             style="color: #1d4ed8; background: transparent; border: 2px solid #1d4ed8; padding: 0.7rem 1.75rem; border-radius: 6px; text-decoration: none; transition: all 0.25s;">
+            Learn More About Us
+            <span class="material-symbols-outlined" style="font-size: 1.2rem;">arrow_forward</span>
+          </a>
         </div>
-        
-        <a href="#" class="btn d-inline-flex align-items-center gap-2 fw-bold" 
-           style="color: #1d4ed8; background: transparent; border: 2px solid #1d4ed8; padding: 0.7rem 1.75rem; border-radius: 6px; text-decoration: none; transition: all 0.25s;">
-          Learn More About Us
-          <span class="material-symbols-outlined" style="font-size: 1.2rem;">arrow_forward</span>
-        </a>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
 <!-- SERVICES SECTION -->
 <section id="services" class="py-5 py-md-7" style="background-color: #eff4ff;">
@@ -855,7 +883,7 @@
     <div class="row g-4">
       <div class="col-lg-4 mb-4 mb-lg-0">
         <div class="d-flex align-items-center gap-3 mb-4">
-          <div style="width: 48px; height: 48px; background: linear-gradient(135deg, #1d4ed8 0%, #4069f2 100%); border-radius: 8px;"></div>
+          <!-- <div style="width: 48px; height: 48px; background: linear-gradient(135deg, #1d4ed8 0%, #4069f2 100%); border-radius: 8px;"></div> -->
           <div style="font-family: 'Montserrat', sans-serif; font-size: 1.5rem; font-weight: 700; color: #1d4ed8;">
             GHAPH Roofing
           </div>
